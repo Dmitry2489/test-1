@@ -1,0 +1,394 @@
+// BEGIN SECTION FORM
+.form__section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: $bg-section-form;
+}
+.form__block {
+	display: flex;
+	min-height: 481px;
+	background-color: $bg-form;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	position: relative;
+}
+.form__background {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 0;
+}
+// Begin creating the effect of the writing appearance of the background of the form
+.background-animation {
+	stroke-dasharray: 750;
+	stroke-dashoffset: 0;
+	-webkit-animation: background-animation 5s linear forwards;
+	animation: background-animation 5s linear forwards;
+	stroke-width: 1;
+	stroke: rgb(238, 239, 247);
+}
+@keyframes background-animation {
+	from {
+		stroke-dashoffset: 750;
+	}
+	to {
+		fill: #f9faff;
+		stroke-dashoffset: 0;
+	}
+}
+// End creating the effect of the writing appearance of the background of the form
+
+// Begin creating the effect of the writing appearance of the text sing up form
+#svg-sign_up path:nth-child(1) {
+	stroke-dasharray: 148px;
+	stroke-dashoffset: 148px;
+	animation: text-sing_up-animation 2s ease forwards 0.3s;
+}
+#svg-sign_up path:nth-child(2) {
+	stroke-dasharray: 74px;
+	stroke-dashoffset: 74px;
+	animation: text-sing_up-animation 2s ease forwards 0.6s;
+}
+#svg-sign_up path:nth-child(3) {
+	stroke-dasharray: 178px;
+	stroke-dashoffset: 178px;
+	animation: text-sing_up-animation 2s ease forwards 0.9s;
+}
+#svg-sign_up path:nth-child(4) {
+	stroke-dasharray: 127px;
+	stroke-dashoffset: 127px;
+	animation: text-sing_up-animation 2s ease forwards 1.2s;
+}
+#svg-sign_up path:nth-child(5) {
+	stroke-dasharray: 128px;
+	stroke-dashoffset: 128px;
+	animation: text-sing_up-animation 2s ease forwards 1.8s;
+}
+#svg-sign_up path:nth-child(6) {
+	stroke-dasharray: 158px;
+	stroke-dashoffset: 158px;
+	animation: text-sing_up-animation 2s ease forwards 2.1s;
+}
+@keyframes text-sing_up-animation {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes fill {
+	to {
+		fill: #fff;
+	}
+}
+// End creating the effect of the writing appearance of the text sing up form
+//Styling aside form
+.form__aside {
+	background: $main-color;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	width: 137px;
+	svg {
+		margin: 0 7.5px 23.5px 0;
+		animation: fill 2s ease forwards 2.9s;
+	}
+}
+//End styling aside form
+
+//Styling  form
+.form__inner {
+	padding: 40px 22px 33px 21px;
+	width: 528px;
+	position: relative;
+	overflow: hidden;
+}
+.form__title {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 26px;
+	letter-spacing: -0.46px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.form__text {
+	font-weight: 300;
+	line-height: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.form {
+	margin-top: 20px;
+	label {
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 14px;
+		color: $label-input;
+		margin-bottom: 5px;
+	}
+}
+.form__wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+.form__wrapper + .form__wrapper {
+	margin-top: 16px;
+}
+.form__input-inner {
+	display: flex;
+	flex-direction: column;
+	width: 236px;
+	position: relative;
+	input,
+	select {
+		line-height: 16px;
+		color: $color-text;
+		border: none;
+		border-bottom: 1px solid $border-input;
+		font-size: 14px;
+		padding-bottom: 6px;
+		background-color: rgba($color: #fff, $alpha: 0);
+	}
+	input.error {
+		color: $color-error;
+		border-bottom: 1px solid $color-error;
+	}
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	input:-webkit-autofill:active {
+		transition: background-color 5000s ease-in-out 0s; /* выставляется желаемая задержка */
+	}
+	select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background: url(../img/svg/shape.svg) no-repeat;
+		background-position: right 29%;
+		cursor: pointer;
+		option {
+			line-height: 16px;
+			color: $color-text;
+			font-family: $main-font;
+			font-size: 14px;
+		}
+	}
+}
+.valid-input__icon {
+	position: absolute;
+	right: 0;
+	top: 52%;
+	transform: translateY(-50%);
+	display: none;
+}
+.valid {
+	.valid-input__icon {
+		display: block;
+	}
+}
+.select__inner {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 1px;
+}
+.day-month {
+	width: 56px;
+}
+.month {
+	width: 91px;
+}
+.year {
+	width: 69px;
+}
+.input-radio__inner {
+	display: flex;
+	align-items: center;
+	padding-top: 1px;
+	position: relative;
+	label {
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 400;
+		color: $color-text;
+		margin-left: 6px;
+		margin-bottom: 0;
+	}
+}
+
+// begin custom input radio
+.form__radio {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	input[type="radio"] {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		cursor: pointer;
+		position: relative;
+		height: 12px;
+		width: 12px;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			border: 0.7px solid $main-color;
+		}
+		&:checked::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: $main-color;
+			transform: translate(-50%, -50%);
+			visibility: visible;
+		}
+	}
+}
+// end custom input radio
+.form__radio + .form__radio {
+	margin-left: 19px;
+}
+.form__text-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	bottom: 32px;
+	left: 21px;
+	right: 22px;
+}
+.form__button {
+	font-family: $text-font;
+	line-height: 18px;
+	color: $color-button;
+	border: none;
+	background: $main-color;
+	padding: 6px 25px 6px 25px;
+	margin-top: 5px;
+	border: 1px solid transparent;
+	transition: all ease 0.3s;
+	&:hover {
+		border: 1px solid $main-color;
+		color: $main-color;
+		background-color: #fff;
+	}
+}
+.form__text-bottom {
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 15px;
+	color: $color-text-bottom;
+	.form__text-link {
+		color: $main-color;
+		font-weight: 500;
+	}
+}
+
+// begin successful registration block
+.form__registration-successful {
+	background-color: $bg-form;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.registration-successful__inner-text {
+	font-family: $main-font;
+	color: $color-text;
+	margin-left: 64px;
+	padding-top: 10px;
+}
+.registration-successful__title {
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 26px;
+	letter-spacing: -0.46px;
+	margin-bottom: 11px;
+}
+.registration-successful__text {
+	font-style: normal;
+	font-weight: 300;
+	line-height: 16px;
+	color: $color-text;
+}
+.form__text-bottom--registration-successful {
+	position: absolute;
+	left: 21px;
+	bottom: 44px;
+}
+// end successful registration block
+// END SECTION FORM
+
+// @media
+@media (max-width: 680px) {
+	.form__section {
+		height: auto;
+	}
+
+	.form__block {
+		flex-direction: column;
+		margin: 20px 0;
+	}
+	.form__aside {
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		height: 100px;
+		svg {
+			transform: rotate(90deg);
+			margin: 0;
+		}
+	}
+	.form__text-inner {
+		position: static;
+	}
+}
+@media (max-width: 560px) {
+	.form__block {
+		min-height: inherit;
+	}
+	.form__wrapper {
+		display: block;
+	}
+	.form__block {
+		width: 94%;
+	}
+	.form__inner {
+		width: auto;
+		padding: 32px 22px 33px 21px;
+	}
+	.form__input-inner {
+		margin-top: 15px;
+	}
+	.form label {
+		font-size: 14px;
+		line-height: 15px;
+	}
+	.form__text-bottom {
+		font-size: 14px;
+	}
+}
+@media (max-width: 480px) {
+	.form__text-inner {
+		flex-direction: column-reverse;
+		margin-top: 15px;
+	}
+	.form__text-bottom {
+		margin-top: 10px;
+	}
+}
